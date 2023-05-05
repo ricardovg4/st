@@ -1651,12 +1651,12 @@ xdrawcursor(int cx, int cy, Glyph g, int ox, int oy, Glyph og)
 				win.vborderpx + cy * win.ch,
 				1, win.ch - 1);
 		XftDrawRect(xw.draw, &drawcol,
-				win.hborderpx + cx * win.cw,
+				win.hborderpx + (cx + 1) * win.cw - 1,
 				win.vborderpx + cy * win.ch,
 				1, win.ch - 1);
 		XftDrawRect(xw.draw, &drawcol,
 				win.hborderpx + cx * win.cw,
-				win.vborderpx + cy * win.ch,
+				win.vborderpx + (cy + 1) * win.ch - 1,
 				win.cw, 1);
 	}
 }
